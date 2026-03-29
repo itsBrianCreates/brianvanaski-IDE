@@ -204,6 +204,12 @@
   background: var(--hover-bg);
 }
 
+@media (max-width: 768px) {
+  .file-share {
+    display: none;
+  }
+}
+
 /* ===== TOAST ===== */
 
 .toast {
