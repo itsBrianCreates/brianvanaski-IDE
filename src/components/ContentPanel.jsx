@@ -119,7 +119,12 @@ export default function ContentPanel({ activeFile, onNavigate }) {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw, rehypeHighlight]}
-              components={{ a: linkRenderer }}
+              components={{
+                a: linkRenderer,
+                img: ({ src, ...props }) => (
+                  <img src={src?.startsWith('/') ? import.meta.env.BASE_URL + src.slice(1) : src} {...props} />
+                ),
+              }}
             >
               {content}
             </ReactMarkdown>
