@@ -132,17 +132,6 @@ function App() {
         onFileSelect={handleFileSelect}
       />
 
-      {/* Mobile hamburger */}
-      <button
-        className="mobile-hamburger"
-        onClick={() => setSidebarOpen(true)}
-        aria-label="Open sidebar"
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-
       {/* Main content */}
       <main className="main-area">
         <TabBar
@@ -150,6 +139,7 @@ function App() {
           activeFile={activeFile}
           onTabSelect={setActiveFile}
           onTabClose={handleTabClose}
+          onMenuOpen={() => setSidebarOpen(true)}
         />
         <ContentPanel activeFile={activeFile} onNavigate={handleNavigate} />
       </main>

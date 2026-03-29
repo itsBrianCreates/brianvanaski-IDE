@@ -1,10 +1,14 @@
+import { Menu } from 'lucide-react';
 import { nameMap } from '../fileTree';
 
-export default function TabBar({ openTabs, activeFile, onTabSelect, onTabClose }) {
+export default function TabBar({ openTabs, activeFile, onTabSelect, onTabClose, onMenuOpen }) {
   const getFileName = (path) => nameMap[path] || path + '.md';
 
   return (
     <div className="tab-bar">
+      <button className="mobile-hamburger" onClick={onMenuOpen} aria-label="Open sidebar">
+        <Menu size={18} />
+      </button>
       {openTabs.map((tab) => (
         <div
           key={tab}

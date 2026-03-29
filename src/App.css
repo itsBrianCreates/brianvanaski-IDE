@@ -835,29 +835,22 @@
 
 .mobile-hamburger {
   display: none;
-  position: fixed;
-  top: 8px;
-  left: 8px;
-  z-index: 50;
-  width: 36px;
-  height: 36px;
-  border: none;
-  background: var(--bg-sidebar);
-  border-radius: 4px;
-  cursor: pointer;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  border: 1px solid var(--border-color);
+  width: 36px;
+  min-width: 36px;
+  height: 100%;
+  border: none;
+  border-right: 1px solid var(--border-color);
+  background: var(--bg-tab-bar);
+  cursor: pointer;
+  color: var(--text-muted);
+  flex-shrink: 0;
 }
 
-.mobile-hamburger span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--text-body);
-  border-radius: 1px;
+.mobile-hamburger:hover {
+  color: var(--text-body);
+  background: var(--hover-bg);
 }
 
 @media (max-width: 768px) {
@@ -951,6 +944,16 @@
 /* Hide the duplicate header inside mobile sidebar's FileTree */
 .mobile-sidebar .file-tree-header {
   display: none;
+}
+
+/* Larger tap targets for mobile */
+.mobile-sidebar .file-tree-item {
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+.mobile-sidebar .folder-name {
+  font-size: 16px;
 }
 
 /* ===== SCROLLBAR STYLING ===== */

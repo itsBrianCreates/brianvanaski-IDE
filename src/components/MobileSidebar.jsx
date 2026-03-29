@@ -11,7 +11,7 @@ export default function MobileSidebar({ isOpen, onClose, activeFile, onFileSelec
       {isOpen && <div className="mobile-backdrop" onClick={onClose} />}
       <div className={`mobile-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="mobile-sidebar-header">
-          <span>EXPLORER</span>
+          <span>BRIANVANASKI.COM</span>
           <button className="mobile-close" onClick={onClose} aria-label="Close sidebar">
             &times;
           </button>
