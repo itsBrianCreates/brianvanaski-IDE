@@ -84,7 +84,6 @@ export default function ContentPanel({ activeFile, onNavigate }) {
     │   ← Pick a file over there   │
     │                              │
     ╰──────────────────────────────╯`}</pre>
-          <p className="empty-hint">Pro tip: closing all your tabs won't make your deadlines disappear.</p>
           <button className="empty-cta" onClick={() => onNavigate('home')}>
             Open README.md
           </button>
