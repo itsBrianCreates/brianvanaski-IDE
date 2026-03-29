@@ -1,4 +1,5 @@
 import FileTree from './FileTree';
+import AppPromo from './AppPromo';
 
 export default function MobileSidebar({ isOpen, onClose, activeFile, onFileSelect }) {
   const handleFileSelect = (path) => {
@@ -17,6 +18,7 @@ export default function MobileSidebar({ isOpen, onClose, activeFile, onFileSelec
           </button>
         </div>
         <FileTree activeFile={activeFile} onFileSelect={handleFileSelect} />
+        <AppPromo />
       </div>
     </>
   );

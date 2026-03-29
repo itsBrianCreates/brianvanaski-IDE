@@ -940,6 +940,12 @@
 }
 
 /* Hide the duplicate header inside mobile sidebar's FileTree */
+.mobile-sidebar .file-tree {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+
 .mobile-sidebar .file-tree-header {
   display: none;
 }
