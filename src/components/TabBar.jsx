@@ -1,10 +1,7 @@
+import { nameMap } from '../fileTree';
+
 export default function TabBar({ openTabs, activeFile, onTabSelect, onTabClose }) {
-  // Derive display name from path
-  const getFileName = (path) => {
-    const parts = path.split('/');
-    const base = parts[parts.length - 1];
-    return base + '.md';
-  };
+  const getFileName = (path) => nameMap[path] || path + '.md';
 
   return (
     <div className="tab-bar">

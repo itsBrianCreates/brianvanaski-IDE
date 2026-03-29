@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
-import { contentMap } from '../fileTree';
+import { contentMap, nameMap } from '../fileTree';
 
 export default function ContentPanel({ activeFile, onNavigate }) {
   const [viewMode, setViewMode] = useState('preview');
@@ -20,10 +20,10 @@ export default function ContentPanel({ activeFile, onNavigate }) {
   // Build breadcrumb
   const breadcrumb = useMemo(() => {
     if (!activeFile) return '';
+    const displayName = nameMap[activeFile] || activeFile + '.md';
     const parts = activeFile.split('/');
-    const last = parts[parts.length - 1] + '.md';
-    if (parts.length === 1) return last;
-    return parts.slice(0, -1).join(' / ') + ' / ' + last;
+    if (parts.length === 1) return displayName;
+    return parts.slice(0, -1).join(' / ') + ' / ' + displayName;
   }, [activeFile]);
 
   // Known paths for internal link detection

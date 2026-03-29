@@ -1,5 +1,7 @@
+import { nameMap } from '../fileTree';
+
 export default function StatusBar({ activeFile, theme, onToggleTheme }) {
-  const filePath = activeFile ? activeFile + '.md' : 'No file open';
+  const filePath = activeFile ? (nameMap[activeFile] || activeFile + '.md') : 'No file open';
 
   return (
     <div className="status-bar">

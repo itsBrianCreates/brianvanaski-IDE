@@ -33,7 +33,6 @@ By day I lead design on AI-powered experiences at LinkedIn. By night (and early 
 ## Experiments
 
 - [Claude Code Workflows](/experiments/claude-code-workflows) -- Running a team of AI digital workers.
-- [Live Coding + Music](/experiments/live-coding-music) -- What happens when code makes sound.
 
 ## Links
 

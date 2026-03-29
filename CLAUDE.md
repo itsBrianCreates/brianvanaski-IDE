@@ -61,6 +61,15 @@ Use `lucide-react` for all icons. Currently using: FolderClosed, FolderOpen, Fil
 4. Add entry to `contentMap` with the path as key
 5. That's it — routing, tabs, and share links work automatically
 
+## Renaming a File in the UI
+
+The display name shown in tabs, breadcrumbs, and the status bar comes from the `name` field in `fileTree` (in `src/fileTree.js`). A `nameMap` is auto-built from the tree and used by TabBar, ContentPanel, and StatusBar. To rename a file's display:
+
+1. Update the `name` field in the `fileTree` array in `src/fileTree.js`
+2. That's it — `nameMap` rebuilds automatically, and all UI (tabs, breadcrumb, status bar, sidebar) updates
+
+Do NOT hardcode display names in components. They all read from `nameMap`.
+
 ## Dev
 
 ```

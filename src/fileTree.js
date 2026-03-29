@@ -4,7 +4,6 @@ import codeStory from './content/portfolio/code-story.md?raw';
 import mrFunnyJokes from './content/portfolio/mr-funny-jokes.md?raw';
 import premiumPages from './content/portfolio/premium-pages.md?raw';
 import claudeCodeWorkflows from './content/experiments/claude-code-workflows.md?raw';
-import liveCodingMusic from './content/experiments/live-coding-music.md?raw';
 import dsColors from './content/design-system/colors.md?raw';
 import dsTypography from './content/design-system/typography.md?raw';
 import dsSpacing from './content/design-system/spacing.md?raw';
@@ -39,7 +38,6 @@ export const fileTree = [
     type: 'folder',
     children: [
       { name: 'claude-code-workflows.md', path: 'experiments/claude-code-workflows' },
-      { name: 'live-coding-music.md', path: 'experiments/live-coding-music' },
     ],
   },
   {
@@ -54,6 +52,20 @@ export const fileTree = [
   { name: 'contact.md', path: 'contact' },
 ];
 
+// Build path → display name lookup from the tree
+function buildNameMap(items) {
+  const map = {};
+  for (const item of items) {
+    if (item.type === 'folder') {
+      Object.assign(map, buildNameMap(item.children));
+    } else {
+      map[item.path] = item.name;
+    }
+  }
+  return map;
+}
+export const nameMap = buildNameMap(fileTree);
+
 export const contentMap = {
   home,
   about,
@@ -61,7 +73,6 @@ export const contentMap = {
   'portfolio/mr-funny-jokes': mrFunnyJokes,
   'portfolio/premium-pages': premiumPages,
   'experiments/claude-code-workflows': claudeCodeWorkflows,
-  'experiments/live-coding-music': liveCodingMusic,
   'portfolio/archive/smart-path': smartPath,
   'portfolio/archive/lego-friends': legoFriends,
   'portfolio/archive/alligators': alligators,
